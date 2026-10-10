@@ -90,3 +90,23 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# macOS system files
+.Spotlight-V100
+.Trashes
+
+# SwiftPM local user configuration
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.swiftpm/configuration/
+
+# Local disk images and release packages
+*.dmg
+*.zip
+*.tar.gz
+
+# Environment and sensitive keys
+.env
+.env.*
+*.p12
+*.cer
+*.mobileprovision

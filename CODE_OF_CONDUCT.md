@@ -59,7 +59,7 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement on the [Whisky Discord](https://discord.gg/CsqAfs9CnM).
+reported to the project maintainers responsible for enforcement at [CONTACT_À_COMPLÉTER : ex. adresse email du mainteneur ou issue privée].
 
 All complaints will be reviewed and investigated promptly and fairly.
 
