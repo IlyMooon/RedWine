@@ -1,57 +1,89 @@
-name: Bug Report
-description: Report a bug.
-type: "Bug"
+name: Rapport de bug
+description: Signaler un dysfonctionnement ou une anomalie dans RedWine.
+labels: ["bug"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de signaler un bug dans **RedWine**. 
+        Avant de soumettre ce rapport, assurez-vous que le problème n'a pas déjà été signalé dans les *Issues* ouvertes.
+
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: Please provide a description of the bug.
+      label: Description du problème
+      description: Résumez clairement le comportement inattendu rencontré.
     validations:
       required: true
+
   - type: textarea
     id: reproduce
     attributes:
-      label: Steps to reproduce
-      description: Please provide detailed step-by-step instructions on how to reproduce this issue.
+      label: Étapes pour reproduire
+      description: Décrivez pas à pas les actions permettant de reproduire l'anomalie.
+      placeholder: |
+        1. Ouvrir RedWine
+        2. Créer une bouteille 'Test' (Windows 10)
+        3. Lancer l'exécutable 'setup.exe'
+        4. Observer l'erreur...
     validations:
       required: true
+
   - type: textarea
     id: expected-behaviour
     attributes:
-      label: Expected behaviour
-      description: Please provide a clear a detailed description of what you expected to happen.
+      label: Comportement attendu
+      description: Expliquez ce qui aurait dû se passer dans des conditions normales.
     validations:
       required: true
+
   - type: textarea
     id: logs
     attributes:
-      label: Logs
-      description: Please provide the logs from the launched Wine process. These can be found by pressing `CMD + L` in Whisky.
-      render: bash
+      label: Journaux d'exécution (Logs Wine)
+      description: Fournissez les logs du processus Wine lancés. Vous pouvez les copier depuis RedWine en ouvrant la console de logs avec le raccourci `Cmd + L`.
+      render: shell
     validations:
-      required: true
-  - type: dropdown
-    id: whisky-version
+      required: false
+
+  - type: input
+    id: redwine-version
     attributes:
-      label: What version of Whisky are you using?
-      options:
-        - "2.3.2"
-        - "<2.3.2"
+      label: Version de RedWine (ou commit Git)
+      description: Indiquez la version de RedWine utilisée (ou le commit Git si compilé depuis les sources).
+      placeholder: ex. 1.0.0 ou commit fd5480a
     validations:
       required: true
+
   - type: dropdown
-    id: mac-version
+    id: macos-version
     attributes:
-      label: What version of macOS are you using?
+      label: Version de macOS
       options:
-        - "Sonoma (macOS 14)"
+        - "macOS 15 (Sequoia)"
+        - "macOS 14 (Sonoma)"
+        - "Autre (préciser dans la description)"
     validations:
       required: true
+
+  - type: dropdown
+    id: mac-model
+    attributes:
+      label: Puce Apple Silicon
+      options:
+        - "Apple M1 / M1 Pro / M1 Max / M1 Ultra"
+        - "Apple M2 / M2 Pro / M2 Max / M2 Ultra"
+        - "Apple M3 / M3 Pro / M3 Max"
+        - "Apple M4 / M4 Pro / M4 Max"
+        - "Autre"
+    validations:
+      required: true
+
   - type: checkboxes
     attributes:
-      label: Issue Language
-      description: All issues must be written in clear plain English so that all devs are able to read them.
+      label: Vérifications préalables
       options:
-        - label: Yes my issue is written in English
+        - label: J'ai vérifié que le binaire Windows n'utilise pas un anti-cheat noyau incompatible avec Wine (Easy Anti-Cheat, BattlEye, Vanguard...).
+          required: false
+        - label: Mon rapport est rédigé en français ou en anglais clair.
           required: true

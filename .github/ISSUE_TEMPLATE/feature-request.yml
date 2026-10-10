@@ -1,32 +1,41 @@
-name: Feature Request
-description: Request a new feature.
-type: "Enhancement"
+name: Demande de fonctionnalité
+description: Proposer une idée, une amélioration ou une nouvelle fonctionnalité pour RedWine.
+labels: ["enhancement"]
 body:
-  - type: textarea
-    id: related-to-problem
+  - type: markdown
     attributes:
-      label: Is your feature request related to a problem?
-      description: A clear and concise description of what the problem is.
+      value: |
+        Merci de contribuer à l'évolution de **RedWine** ! Exprimez votre besoin ou votre idée de manière structurée ci-dessous.
+
+  - type: textarea
+    id: problem-description
+    attributes:
+      label: Votre suggestion répond-elle à un problème ou une limitation existante ?
+      description: Expliquez pourquoi cette fonctionnalité est utile ou quel manque elle comble dans RedWine.
+      placeholder: Je rencontre souvent la situation suivante...
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Solution ou fonctionnalité proposée
+      description: Décrivez précisément le comportement ou l'interface que vous aimeriez voir implémenté.
     validations:
       required: true
+
   - type: textarea
-    id: solution
+    id: alternatives
     attributes:
-      label: Describe the solution you'd like
-      description: A clear and concise description of what you're suggesting.
+      label: Alternatives envisagées
+      description: Avez-vous envisagé d'autres approches ou solutions de contournement ?
     validations:
-      required: true
+      required: false
+
   - type: textarea
-    id: extra-info
+    id: additional-context
     attributes:
-      label: Anything else?
-      description: Upload any relevant images, links, screenshots that might help realise your suggestion.
+      label: Contexte additionnel / Captures d'écran
+      description: Ajoutez toute information, maquette, lien de référence ou capture d'écran pouvant clarifier votre demande.
     validations:
-      required: true
-  - type: checkboxes
-    attributes:
-      label: Issue Language
-      description: All issues must be written in clear plain English so that all devs are able to read them.
-      options:
-        - label: Yes my issue is written in English
-          required: true
+      required: false
